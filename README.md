@@ -80,14 +80,22 @@ python lessons/lesson1_introduction.py
 State-Machines/
 ├── src/                          # Core state machine framework
 │   ├── __init__.py
-│   └── state_machine.py         # Base classes and utilities
+│   ├── state_machine.py         # Base classes and utilities
+│   └── visualize.py             # Visualization utilities
 ├── lessons/                      # Educational lessons
 │   ├── lesson1_introduction.py  # State machine basics
 │   ├── lesson2_eight_puzzle.py  # The 8-Puzzle problem
 │   └── lesson3_simple_sort.py   # Termination proofs
-├── demos/                        # Interactive demos (coming soon)
+├── demos/                        # Interactive Streamlit apps
+│   ├── eight_puzzle_app.py      # 8-Puzzle visualizer
+│   └── simple_sort_app.py       # Simple sort visualizer
+├── examples/                     # Example implementations
+│   └── custom_state_machines.py # Custom state machine examples
+├── notebooks/                    # Jupyter notebooks (coming soon)
 ├── requirements.txt              # Python dependencies
-└── README.md                     # This file
+├── README.md                     # This file
+├── GUIDE.md                      # Complete tutorial guide
+└── QUICKSTART.md                 # Quick start guide
 ```
 
 ## 🧮 Core Framework
@@ -183,10 +191,37 @@ print(machine.is_reachable("end"))  # True
 
 ## 📖 Learning Path
 
-1. **Start with Lesson 1**: Understand the basics
-2. **Move to Lesson 2**: See invariants in action
-3. **Complete Lesson 3**: Master termination proofs
-4. **Experiment**: Create your own state machines!
+1. **Read QUICKSTART.md**: Get set up in 5 minutes
+2. **Start with Lesson 1**: Understand the basics
+3. **Move to Lesson 2**: See invariants in action
+4. **Complete Lesson 3**: Master termination proofs
+5. **Try Interactive Demos**: Visualize the concepts
+6. **Explore Examples**: See more use cases
+7. **Experiment**: Create your own state machines!
+
+## 🎨 Interactive Demos
+
+### 8-Puzzle Visualizer
+```bash
+streamlit run demos/eight_puzzle_app.py
+```
+
+### Simple Sort Visualizer
+```bash
+streamlit run demos/simple_sort_app.py
+```
+
+## 💡 Examples
+
+See `examples/custom_state_machines.py` for:
+- Door Lock state machine
+- Bank Account model
+- Palindrome Builder
+
+Run all examples:
+```bash
+python examples/custom_state_machines.py
+```
 
 ## 🎯 Applications
 
