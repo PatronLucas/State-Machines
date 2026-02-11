@@ -211,8 +211,8 @@ def demonstrate_8_puzzle_impossibility():
     # Note: Full verification would take too long for all states,
     # but we can verify the principle locally
     print("\nThe invariant principle tells us:")
-    print("- If P(initial_state) is true (✓)")
-    print("- And P is preserved by all transitions (✓)")
+    print("- If P(initial_state) is true")
+    print("- And P is preserved by all transitions")
     print("- Then P is true for ALL reachable states")
     print("\nSince target has even inversions, it CANNOT be reachable!")
     

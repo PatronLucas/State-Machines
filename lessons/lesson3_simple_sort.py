@@ -237,8 +237,8 @@ def verify_simple_sort_termination():
         
         current = next_state
     
-    print("\n✓ Potential function strictly decreases at each step")
-    print("✓ Therefore, the algorithm MUST terminate!")
+    print("\nPotential function strictly decreases at each step")
+    print("Therefore, the algorithm MUST terminate!")
 
 
 def prove_final_state_is_sorted():
@@ -279,7 +279,7 @@ def prove_final_state_is_sorted():
         print(f"\n  Sequence: {seq}")
         print(f"    Is sorted? {is_sorted}")
         print(f"    Is final? {is_final}")
-        print(f"    {'✓' if is_final == expected_final else '✗'} Matches expectation")
+        print(f"    {'PASS' if is_final == expected_final else 'FAIL'} Matches expectation")
 
 
 if __name__ == "__main__":

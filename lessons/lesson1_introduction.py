@@ -151,7 +151,7 @@ def demonstrate_deterministic():
     
     print(f"\nComplete execution history: {counter.get_execution()}")
     
-    print("\n✓ DETERMINISTIC: At each state, there is exactly ONE possible next state")
+    print("\nDETERMINISTIC: At each state, there is exactly ONE possible next state")
 
 
 def demonstrate_nondeterministic():
@@ -191,7 +191,7 @@ def demonstrate_nondeterministic():
     for i, execution in enumerate(all_executions, 1):
         print(f"  {i}. {' → '.join(str(s) for s in execution)}")
     
-    print("\n✓ NON-DETERMINISTIC: At each state, there are MULTIPLE possible next states")
+    print("\nNON-DETERMINISTIC: At each state, there are MULTIPLE possible next states")
 
 
 def demonstrate_reachability():
@@ -270,8 +270,8 @@ def demonstrate_cycles():
         if transitions:
             traffic.step(transitions[0])
     
-    print("\n✓ This state machine has a CYCLE - no final state!")
-    print("✓ It can run forever (infinite execution)")
+    print("\nThis state machine has a CYCLE - no final state!")
+    print("It can run forever (infinite execution)")
 
 
 def demonstrate_final_states():

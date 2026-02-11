@@ -13,16 +13,16 @@ def test_imports():
     
     try:
         from src.state_machine import StateMachine, Invariant, PotentialFunction
-        print("  ✓ Core framework imports successful")
+        print("  PASS: Core framework imports successful")
     except Exception as e:
-        print(f"  ✗ Core framework import failed: {e}")
+        print(f"  FAIL: Core framework import failed: {e}")
         return False
     
     try:
         from src.visualize import visualize_puzzle_state, visualize_sequence
-        print("  ✓ Visualization module imports successful")
+        print("  PASS: Visualization module imports successful")
     except Exception as e:
-        print(f"  ✗ Visualization module import failed: {e}")
+        print(f"  FAIL: Visualization module import failed: {e}")
         return False
     
     return True
@@ -37,9 +37,9 @@ def test_lessons():
         sys.path.insert(0, os.path.dirname(__file__))
         from lessons.lesson2_eight_puzzle import EightPuzzle, count_inversions
         from lessons.lesson3_simple_sort import SimpleSortMachine
-        print("  ✓ Lesson modules import successfully")
+        print("  PASS: Lesson modules import successfully")
     except Exception as e:
-        print(f"  ✗ Lesson import failed: {e}")
+        print(f"  FAIL: Lesson import failed: {e}")
         return False
     
     # Test 8-puzzle
@@ -47,18 +47,18 @@ def test_lessons():
         puzzle = EightPuzzle((1, 2, 3, 4, 5, 6, 8, 7, 0))
         inversions = count_inversions((1, 2, 3, 4, 5, 6, 8, 7, 0))
         assert inversions == 1, f"Expected 1 inversion, got {inversions}"
-        print("  ✓ 8-Puzzle works correctly")
+        print("  PASS: 8-Puzzle works correctly")
     except Exception as e:
-        print(f"  ✗ 8-Puzzle test failed: {e}")
+        print(f"  FAIL: 8-Puzzle test failed: {e}")
         return False
     
     # Test simple sort
     try:
         sorter = SimpleSortMachine([4, 1, 3, 2])
         assert not sorter.is_sorted(), "Should not be sorted initially"
-        print("  ✓ Simple Sort works correctly")
+        print("  PASS: Simple Sort works correctly")
     except Exception as e:
-        print(f"  ✗ Simple Sort test failed: {e}")
+        print(f"  FAIL: Simple Sort test failed: {e}")
         return False
     
     return True
@@ -89,9 +89,9 @@ def test_core_framework():
         assert counter.current_state == 0
         assert counter.is_reachable(3)
         assert not counter.is_reachable(10)
-        print("  ✓ State machine creation and reachability works")
+        print("  PASS: State machine creation and reachability works")
     except Exception as e:
-        print(f"  ✗ State machine test failed: {e}")
+        print(f"  FAIL: State machine test failed: {e}")
         return False
     
     # Test invariant
@@ -102,9 +102,9 @@ def test_core_framework():
         inv = Invariant(is_non_negative, "Non-negative")
         assert inv.holds(5)
         assert not inv.holds(-1)
-        print("  ✓ Invariant works correctly")
+        print("  PASS: Invariant works correctly")
     except Exception as e:
-        print(f"  ✗ Invariant test failed: {e}")
+        print(f"  FAIL: Invariant test failed: {e}")
         return False
     
     # Test potential function
@@ -115,9 +115,9 @@ def test_core_framework():
         pot = PotentialFunction(potential, "Decreasing")
         assert pot.evaluate(0) == 10
         assert pot.evaluate(5) == 5
-        print("  ✓ Potential function works correctly")
+        print("  PASS: Potential function works correctly")
     except Exception as e:
-        print(f"  ✗ Potential function test failed: {e}")
+        print(f"  FAIL: Potential function test failed: {e}")
         return False
     
     return True
@@ -142,10 +142,10 @@ def test_examples():
         builder = PalindromeBuilder(max_length=3)
         assert builder.is_reachable("a")
         
-        print("  ✓ All examples work correctly")
+        print("  PASS: All examples work correctly")
         return True
     except Exception as e:
-        print(f"  ✗ Examples test failed: {e}")
+        print(f"  FAIL: Examples test failed: {e}")
         return False
 
 
@@ -167,16 +167,16 @@ def main():
     print("=" * 60)
     
     for name, passed in results:
-        status = "✓ PASS" if passed else "✗ FAIL"
+        status = "PASS" if passed else "FAIL"
         print(f"{name}: {status}")
     
     all_passed = all(result[1] for result in results)
     
     print("\n" + "=" * 60)
     if all_passed:
-        print("✓ ALL TESTS PASSED!")
+        print("ALL TESTS PASSED!")
     else:
-        print("✗ SOME TESTS FAILED")
+        print("SOME TESTS FAILED")
     print("=" * 60)
     
     return all_passed

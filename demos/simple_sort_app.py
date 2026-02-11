@@ -78,7 +78,7 @@ def create_potential_chart(history):
 def main():
     st.set_page_config(page_title="Simple Sort Visualizer", layout="wide")
     
-    st.title("📊 Simple Sort Algorithm Visualizer")
+    st.title("Simple Sort Algorithm Visualizer")
     st.markdown("### Proving Termination with Potential Functions")
     
     # Sidebar
@@ -151,7 +151,7 @@ def main():
         
         st.metric("Current Step", st.session_state.step_count)
         st.metric("Inversions (Potential)", inversions)
-        st.metric("Status", "✅ Sorted" if is_sorted else "🔄 Sorting")
+        st.metric("Status", "Sorted" if is_sorted else "Sorting")
         
         # Max possible inversions
         n = len(current)
@@ -163,7 +163,7 @@ def main():
     control_cols = st.columns(4)
     
     with control_cols[0]:
-        if st.button("▶️ Step", disabled=st.session_state.is_running):
+        if st.button("Step", disabled=st.session_state.is_running):
             transitions = sorter.get_transitions(sorter.current_state)
             if transitions:
                 sorter.step(transitions[0])
@@ -172,11 +172,11 @@ def main():
                 st.experimental_rerun()
     
     with control_cols[1]:
-        if st.button("⏩ Run to Completion", disabled=st.session_state.is_running):
+        if st.button("Run to Completion", disabled=st.session_state.is_running):
             st.session_state.is_running = True
             
     with control_cols[2]:
-        if st.button("⏮️ Reset"):
+        if st.button("Reset"):
             st.session_state.sorter = SimpleSortMachine(initial_sequence)
             st.session_state.history = [st.session_state.sorter.current_state]
             st.session_state.step_count = 0
@@ -200,7 +200,7 @@ def main():
     # Potential function chart
     if len(st.session_state.history) > 1:
         st.markdown("---")
-        st.subheader("📈 Potential Function Visualization")
+        st.subheader("Potential Function Visualization")
         
         pot_fig = create_potential_chart(st.session_state.history)
         st.plotly_chart(pot_fig, use_container_width=True)
@@ -214,7 +214,7 @@ def main():
     # Show available transitions
     if not sorter.is_sorted():
         st.markdown("---")
-        st.subheader("🔀 Available Swaps")
+        st.subheader("Available Swaps")
         
         transitions = sorter.get_transitions(sorter.current_state)
         
@@ -233,11 +233,11 @@ def main():
                     st.write(f"Inversions: {inversions} → {next_inversions}")
                     st.write(f"Decrease: -{decrease}")
     else:
-        st.success("🎉 **Sorting Complete!** Reached the final state.")
+        st.success("**Sorting Complete!** Reached the final state.")
     
     # Educational content
     st.markdown("---")
-    st.header("📚 Understanding Termination Proofs")
+    st.header("Understanding Termination Proofs")
     
     with st.expander("What is a Potential Function?"):
         st.markdown("""
@@ -247,10 +247,10 @@ def main():
         **f(state) = number of inversions in the state**
         
         Key properties:
-        1. ✅ Maps to **natural numbers** (0, 1, 2, ...)
-        2. ✅ **Strictly decreasing**: f(next) < f(current) for all transitions
-        3. ✅ Natural numbers can't decrease forever
-        4. ✅ Therefore: algorithm **must terminate**!
+        1. Maps to **natural numbers** (0, 1, 2, ...)
+        2. **Strictly decreasing**: f(next) < f(current) for all transitions
+        3. Natural numbers can't decrease forever
+        4. Therefore: algorithm **must terminate**!
         """)
     
     with st.expander("Why does it strictly decrease?"):

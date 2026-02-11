@@ -2,7 +2,7 @@
 
 An educational repository that teaches state machine theory through Python code, based on MIT's 6.1200J Mathematics for Computer Science course.
 
-## 🎯 Overview
+## Overview
 
 This repository provides a comprehensive, code-based approach to understanding state machines, including:
 
@@ -11,7 +11,7 @@ This repository provides a comprehensive, code-based approach to understanding s
 - **Termination Proofs**: Using potential functions to prove algorithms terminate
 - **Classic Problems**: The 8-Puzzle, Simple Sort, and more
 
-## 📚 Course Structure
+## Course Structure
 
 ### **Lesson 1: Introduction to State Machines** (`lessons/lesson1_introduction.py`)
 Learn the fundamentals through interactive examples:
@@ -49,7 +49,7 @@ Understand how to prove algorithms terminate:
 python lessons/lesson3_simple_sort.py
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -74,7 +74,7 @@ pip install -r requirements.txt
 python lessons/lesson1_introduction.py
 ```
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 State-Machines/
@@ -98,7 +98,7 @@ State-Machines/
 └── QUICKSTART.md                 # Quick start guide
 ```
 
-## 🧮 Core Framework
+## Core Framework
 
 The `src/state_machine.py` module provides:
 
@@ -125,7 +125,7 @@ class PotentialFunction:
     def is_strictly_decreasing(self, state_machine, state) -> bool
 ```
 
-## 🎓 Key Concepts
+## Key Concepts
 
 ### The Invariant Principle
 
@@ -168,7 +168,7 @@ Cannot reach:
 - Must reach 0 inversions (sorted state)
 - Therefore: algorithm terminates!
 
-## 🛠️ Creating Your Own State Machine
+## Creating Your Own State Machine
 
 ```python
 from src.state_machine import StateMachine
@@ -189,7 +189,7 @@ machine = MyMachine()
 print(machine.is_reachable("end"))  # True
 ```
 
-## 📖 Learning Path
+## Learning Path
 
 1. **Read QUICKSTART.md**: Get set up in 5 minutes
 2. **Start with Lesson 1**: Understand the basics
@@ -199,7 +199,7 @@ print(machine.is_reachable("end"))  # True
 6. **Explore Examples**: See more use cases
 7. **Experiment**: Create your own state machines!
 
-## 🎨 Interactive Demos
+## Interactive Demos
 
 ### 8-Puzzle Visualizer
 ```bash
@@ -211,7 +211,7 @@ streamlit run demos/eight_puzzle_app.py
 streamlit run demos/simple_sort_app.py
 ```
 
-## 💡 Examples
+## Examples
 
 See `examples/custom_state_machines.py` for:
 - Door Lock state machine
@@ -223,7 +223,7 @@ Run all examples:
 python examples/custom_state_machines.py
 ```
 
-## 🎯 Applications
+## Applications
 
 State machines are everywhere in computer science:
 - **Algorithms**: Sorting, searching, graph traversal
@@ -233,7 +233,7 @@ State machines are everywhere in computer science:
 - **Games**: AI, game states
 - **Hardware**: Digital circuit design
 
-## 📝 Based on MIT Course Material
+## Based on MIT Course Material
 
 This repository is based on Lecture 04 from:
 - **Course**: 6.1200J / 18.062J Mathematics for Computer Science
@@ -243,7 +243,7 @@ This repository is based on Lecture 04 from:
 
 Original lecture notes available at [MIT OpenCourseWare](https://ocw.mit.edu).
 
-## 🤝 Contributing
+## Contributing
 
 This is an educational project. Feel free to:
 - Add more examples
@@ -251,11 +251,11 @@ This is an educational project. Feel free to:
 - Suggest improvements
 - Report issues
 
-## 📄 License
+## License
 
 See [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - MIT OpenCourseWare for the excellent course material
 - The instructors of 6.1200J for making these concepts accessible
@@ -263,6 +263,6 @@ See [LICENSE](LICENSE) file for details.
 
 ---
 
-**Happy Learning! 🚀**
+**Happy Learning!**
 
 *"The only way to learn mathematics is to do mathematics." - Paul Halmos*

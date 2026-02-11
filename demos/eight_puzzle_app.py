@@ -62,7 +62,7 @@ def create_puzzle_visualization(state, title="Puzzle State"):
 def main():
     st.set_page_config(page_title="8-Puzzle Visualizer", layout="wide")
     
-    st.title("🧩 The 8-Puzzle Interactive Visualizer")
+    st.title("The 8-Puzzle Interactive Visualizer")
     st.markdown("### Proving Impossibility with the Invariant Principle")
     
     # Sidebar for configuration
@@ -126,13 +126,13 @@ def main():
     
     # Analysis
     st.markdown("---")
-    st.header("🔍 Reachability Analysis")
+    st.header("Reachability Analysis")
     
     if parity == target_parity:
-        st.success("✅ **POTENTIALLY SOLVABLE!** Both states have the same parity.")
+        st.success("**POTENTIALLY SOLVABLE!** Both states have the same parity.")
         st.info("This doesn't guarantee a solution exists, but it's necessary!")
     else:
-        st.error("❌ **IMPOSSIBLE TO SOLVE!** Different parities.")
+        st.error("**IMPOSSIBLE TO SOLVE!** Different parities.")
         st.warning(f"""
         **Proof by Invariant Principle:**
         
@@ -144,7 +144,7 @@ def main():
     
     # Available moves
     st.markdown("---")
-    st.header("🎮 Available Moves")
+    st.header("Available Moves")
     
     if 'execution_history' not in st.session_state:
         st.session_state.execution_history = [puzzle.current_state]
@@ -173,11 +173,11 @@ def main():
                     st.session_state.execution_history.append(next_state)
                     st.experimental_rerun()
     else:
-        st.info("🏁 No moves available (final state)")
+        st.info("No moves available (final state)")
     
     # Explanation
     st.markdown("---")
-    st.header("📚 Understanding Inversions")
+    st.header("Understanding Inversions")
     
     with st.expander("What is an inversion?"):
         st.markdown("""

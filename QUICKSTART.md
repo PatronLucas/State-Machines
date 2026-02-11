@@ -79,4 +79,4 @@ Check the [README.md](README.md) for:
 - Detailed examples
 - Troubleshooting tips
 
-**Happy Learning! 🚀**
+**Happy Learning!**
