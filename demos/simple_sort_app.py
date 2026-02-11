@@ -163,7 +163,7 @@ def main():
     control_cols = st.columns(4)
     
     with control_cols[0]:
-        if st.button("▶️ Step", disabled=st.session_state.is_running):
+        if st.button("Step", disabled=st.session_state.is_running):
             transitions = sorter.get_transitions(sorter.current_state)
             if transitions:
                 sorter.step(transitions[0])
@@ -172,11 +172,11 @@ def main():
                 st.experimental_rerun()
     
     with control_cols[1]:
-        if st.button("⏩ Run to Completion", disabled=st.session_state.is_running):
+        if st.button("Run to Completion", disabled=st.session_state.is_running):
             st.session_state.is_running = True
             
     with control_cols[2]:
-        if st.button("⏮️ Reset"):
+        if st.button("Reset"):
             st.session_state.sorter = SimpleSortMachine(initial_sequence)
             st.session_state.history = [st.session_state.sorter.current_state]
             st.session_state.step_count = 0
