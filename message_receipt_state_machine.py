@@ -37,6 +37,29 @@ class Message:
     Represents a message with receipt confirmation tracking.
     
     This class implements a state machine for message delivery status.
+    
+    State Machine Behavior:
+    ----------------------
+    States: None -> SENT -> DELIVERED -> READ
+    
+    Valid Transitions:
+    - send(): None -> SENT (initial state transition)
+    - deliver(): SENT -> DELIVERED (message reaches recipient)
+    - mark_as_read(): DELIVERED -> READ (recipient reads message)
+    
+    Invalid Transitions (will raise InvalidTransitionError):
+    - Calling send() when already in any state
+    - Calling deliver() when not in SENT state
+    - Calling mark_as_read() when not in DELIVERED state
+    
+    Example:
+    --------
+    >>> msg = Message("Hello", "Alice", "Bob")
+    >>> msg.send()
+    >>> msg.deliver()
+    >>> msg.mark_as_read()
+    >>> print(msg.state)
+    MessageState.READ
     """
     
     def __init__(self, content: str, sender: str, recipient: str):
@@ -144,7 +167,7 @@ if __name__ == "__main__":
     
     # Create a new message
     msg = Message(
-        content="Did you get my last message",
+        content="Did you get my last message?",
         sender="Alice",
         recipient="Bob"
     )
