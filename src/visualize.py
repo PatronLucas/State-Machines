@@ -268,4 +268,4 @@ if __name__ == "__main__":
     fig2 = visualize_sequence(sequence, "Test Sequence", highlight_indices=[0, 1])
     save_visualization(fig2, "/tmp/test_sequence.png")
     
-    print("✓ Visualizations created successfully!")
+    print("Visualizations created successfully!")
