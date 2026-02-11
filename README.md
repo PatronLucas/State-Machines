@@ -7,7 +7,8 @@ Repository for documenting various use cases of state machines (for learning pur
 
 A practical implementation of a state machine for tracking message delivery status, similar to messaging apps like WhatsApp or Telegram.
 
-**File:** `message_receipt_state_machine.py`
+**File:** `message_receipt_state_machine.py`  
+**Diagram:** See [STATE_DIAGRAM.md](STATE_DIAGRAM.md) for a visual representation
 
 #### States
 - **SENT**: Message has been sent but not yet delivered
