@@ -144,10 +144,10 @@ streamlit run demos/eight_puzzle_app.py
 ```
 
 **Features**:
-- 🎮 Interactive puzzle board
-- 📊 Real-time inversion counting
-- ✅ Solvability checker
-- 📚 Educational explanations
+- Interactive puzzle board
+- Real-time inversion counting
+- Solvability checker
+- Educational explanations
 
 ---
 
@@ -165,10 +165,10 @@ streamlit run demos/simple_sort_app.py
 ```
 
 **Features**:
-- 📊 Bar chart visualization
-- 📈 Potential function graph
-- ⏯️ Step-by-step execution
-- 🚀 Auto-run mode
+- Bar chart visualization
+- Potential function graph
+- Step-by-step execution
+- Auto-run mode
 
 ## Core Concepts
 
@@ -366,6 +366,6 @@ See LICENSE file for details.
 
 ---
 
-**Happy Learning! 🚀**
+**Happy Learning! **
 
 Remember: *"The only way to learn mathematics is to do mathematics."* - Paul Halmos
