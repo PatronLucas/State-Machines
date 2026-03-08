@@ -1,0 +1,18 @@
+# Core dependencies
+numpy>=1.24.0
+matplotlib>=3.7.0
+
+# Interactive notebooks
+jupyter>=1.0.0
+ipywidgets>=8.0.0
+
+# Visualization and UI
+streamlit>=1.25.0
+plotly>=5.14.0
+
+# Optional: For advanced animations
+# manim>=0.17.0  # Uncomment if you want to create mathematical animations
+
+# Development and testing
+pytest>=7.3.0
+black>=23.3.0
